@@ -1,1 +1,1 @@
-este es el curso de js que estoy viendo en Platzi
+este es el curso de js que estoy viendo en Platzi.
