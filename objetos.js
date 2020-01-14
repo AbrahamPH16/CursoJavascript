@@ -39,3 +39,14 @@ function saludo({nombre,edad}){
 
 saludo(said)
 saludo(yuri)
+
+
+function cumpleanos(persona){
+    return{
+        ...persona,
+        edad: persona.edad + 1
+    }
+}
+
+
+
