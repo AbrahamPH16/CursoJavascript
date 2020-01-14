@@ -74,3 +74,6 @@ function permitirAcces(persona){
         console.log('Acceso correcto')
     }
 }
+
+
+//Reto es menor de edad con arrow function que retorne que es 
