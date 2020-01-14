@@ -10,3 +10,4 @@ imprimiredad('Maicra',10000)
 imprimiredad('Pollo',20)
 
 
+
