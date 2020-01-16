@@ -11,7 +11,7 @@ const incrementoPeso = 0.3
 const aumentaPeso = (persona) =>  persona.peso += incrementoPeso
 const adelgazar = (persona) => persona.peso -= incrementoPeso
 
-/*
+
 for(i = 1 ; i <= diasAño;i++){
     var random = Math.random()
 
@@ -21,7 +21,7 @@ for(i = 1 ; i <= diasAño;i++){
         adelgazar(abraham)
     }
 }
-*/
+
 const meta = abraham.peso -3
 var dia = 0
 //Aprenderemos ciclo while c:
@@ -40,5 +40,3 @@ while(abraham.peso > meta){
 
 
 console.log(`Pasaron ${dia} dias hasta que ${abraham.nombre} adelgazo`)
-
-
