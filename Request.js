@@ -6,14 +6,17 @@ const opts = {crossDomain: true}
 
 
 
-function obtenerPersonaje(id, callback){
-    const url = `${API_URL}${PEOPLE_URL.replace(':id',id)}`
-
-    $
-    .get(url, opts, callback)
-    .fail(() => {
-        console.log(`No se pudo obtener el personaje ${id}`)
+function obtenerPersonaje(id){
+     return new Promise((resolve, reject)=>{
+        const url = `${API_URL}${PEOPLE_URL.replace(':id',id)}`
+        $
+        .get(url, opts, function(data){
+            resolve(data)
+        })
+        .fail(()=> reject(id))
+    
     })
+
 }
 
 //Asincronismo locoooooooooooooo!!!!!!
@@ -22,16 +25,35 @@ function obtenerPersonaje(id, callback){
 //obtenerPersonaje(2)
 //obtenerPersonaje(3)
 
-//El infierno de los callback Muajajaja
-obtenerPersonaje(1, function(personaje) {
-    console.log(`Hola, me llamo ${personaje.name}`)
-    obtenerPersonaje(2, function (personaje) {
-        console.log(`Hola, me llamo ${personaje.name}`)
-        obtenerPersonaje(3, function (personaje) {
-            console.log(`Hola, me llamo ${personaje.name}`)
-            obtenerPersonaje(4,function name(personaje) {
-                console.log(`Yo soy tu padre ${personaje.name}`)  
-            })  
-        })
-    })
+function onError(id){
+    console.log(`Ocurrio un error al buscar al personaje ${id}`)
+}
+obtenerPersonaje(1)
+.then(function(personaje){
+    console.log(`El personaje 1 es ${personaje.name}`)
 })
+.catch(onError)
+
+
+
+
+//El infierno de los callback Muajajaja
+
+
+
+//Promesas 
+//E3 estados
+//
+//           FULFILLED ------- .then(val => ...)
+//(resolve)/                        |
+//  PENDING                        |
+//(reject) \                       |
+//          REJECTED ------- .catch(err => ...)
+//
+//
+//Asi se crea una promesa 
+//new Promise(function(resolve,reject){
+//  ...  
+//}).then(var =>{
+//    ..
+//})
