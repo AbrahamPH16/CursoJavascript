@@ -28,24 +28,40 @@ function obtenerPersonaje(id){
 function onError(id){
     console.log(`Ocurrio un error al buscar al personaje ${id}`)
 }
-obtenerPersonaje(1)
-.then(personaje => {
-    console.log(`El personaje 1 es ${personaje.name}`)
-    return obtenerPersonaje(2)
-})
-.then(personaje => {
-    console.log(`El personaje 2 es ${personaje.name}`)
-    return obtenerPersonaje(3)
-})
-.then(personaje => {
-    console.log(`El personaje 3 es ${personaje.name}`)
-    return obtenerPersonaje(4)
-})
-.then(personaje =>{
-    console.log(`El personaje 4 es ${personaje.name}`)
-    //return obtenerPersonaje(2)
-})
+//Paralelo
+var ids = [1,2,3,4,5,6,7]
+
+
+//var promesas = ids.map(function (id) {
+//    return obtenerPersonaje(id)
+//})
+
+
+var promesas = ids.map (id  =>obtenerPersonaje(id))
+Promise
+.all(promesas)
+.then(personajes => console.log(personajes))
 .catch(onError)
+
+//Serie
+//obtenerPersonaje(1)
+//.then(personaje => {
+//    console.log(`El personaje 1 es ${personaje.name}`)
+//    return obtenerPersonaje(2)
+//})
+//.then(personaje => {
+//    console.log(`El personaje 2 es ${personaje.name}`)
+//    return obtenerPersonaje(3)
+//})
+//.then(personaje => {
+//    console.log(`El personaje 3 es ${personaje.name}`)
+//    return obtenerPersonaje(4)
+//})
+//.then(personaje =>{
+//    console.log(`El personaje 4 es ${personaje.name}`)
+//    //return obtenerPersonaje(2)
+//})
+//.catch(onError)
 
 
 
