@@ -9,13 +9,11 @@ const opts = {crossDomain: true}
 function obtenerPersonaje(id, callback){
     const url = `${API_URL}${PEOPLE_URL.replace(':id',id)}`
 
-    $.get(url, function(persona){
-    console.log(`Hola, mi nombre es ${persona.name}`)
-
-    if(callback){
-        callback()
-    }
-})
+    $
+    .get(url, opts, callback)
+    .fail(() => {
+        console.log(`No se pudo obtener el personaje ${id}`)
+    })
 }
 
 //Asincronismo locoooooooooooooo!!!!!!
@@ -25,10 +23,15 @@ function obtenerPersonaje(id, callback){
 //obtenerPersonaje(3)
 
 //El infierno de los callback Muajajaja
-obtenerPersonaje(1, function() {
-    obtenerPersonaje(2, function () {
-        obtenerPersonaje(3, function () {
-            obtenerPersonaje(4)
+obtenerPersonaje(1, function(personaje) {
+    console.log(`Hola, me llamo ${personaje.name}`)
+    obtenerPersonaje(2, function (personaje) {
+        console.log(`Hola, me llamo ${personaje.name}`)
+        obtenerPersonaje(3, function (personaje) {
+            console.log(`Hola, me llamo ${personaje.name}`)
+            obtenerPersonaje(4,function name(personaje) {
+                console.log(`Yo soy tu padre ${personaje.name}`)  
+            })  
         })
     })
 })
