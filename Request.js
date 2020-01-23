@@ -1,3 +1,5 @@
+//import { promises } from "dns"
+
 const API_URL = 'https://swapi.co/api/'
 
 const PEOPLE_URL = 'people/:id'
@@ -29,20 +31,22 @@ function onError(id){
     console.log(`Ocurrio un error al buscar al personaje ${id}`)
 }
 //Paralelo
-var ids = [1,2,3,4,5,6,7]
+
 
 
 //var promesas = ids.map(function (id) {
 //    return obtenerPersonaje(id)
 //})
-
-
-var promesas = ids.map (id  =>obtenerPersonaje(id))
-Promise
-.all(promesas)
-.then(personajes => console.log(personajes))
-.catch(onError)
-
+async function obtenerPersonajes(){
+   var ids = [1,2,3,4,5,6,7]
+   var promesas = ids.map (id  =>obtenerPersonaje(id))
+   try{
+   var personajes = await Promise.all(promesas)
+   console.log(personajes)
+   }catch(id){
+      onError(id)
+   }
+}
 //Serie
 //obtenerPersonaje(1)
 //.then(personaje => {
@@ -63,7 +67,7 @@ Promise
 //})
 //.catch(onError)
 
-
+obtenerPersonajes()
 
 
 //El infierno de los callback Muajajaja
