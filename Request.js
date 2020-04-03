@@ -68,6 +68,7 @@ async function obtenerPersonajes(){
 //.catch(onError)
 
 obtenerPersonajes()
+console.log('Yo')
 
 
 //El infierno de los callback Muajajaja
