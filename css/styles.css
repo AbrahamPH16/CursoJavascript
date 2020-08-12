@@ -41,7 +41,7 @@ p{
   margin-bottom: 20px;
   width: 80px;
   border: 3px solid white;
-  border-radius:25%;
+  border-radius:10px;
   background: #94d2e9;
   color: white;
   size: 20px;
@@ -127,7 +127,7 @@ p{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    border-radius: 25%;
+    border-radius: 10px;
         
   }
 
