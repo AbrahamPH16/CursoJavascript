@@ -154,7 +154,7 @@ class Juego {
 }
 function elegirDificultad(dificultad) {
   if (dificultad == 'Facil') {
-    ULTIMO_NIVEL = 2;
+    ULTIMO_NIVEL = 10;
     dif = 'Fácil';
   } else if (dificultad == 'Normal') {
     ULTIMO_NIVEL = 15;
