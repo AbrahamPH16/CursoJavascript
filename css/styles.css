@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    background: #dedede;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+ol{
+  padding-inline-start: 0px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+p{
+  margin-right: 5px;
+}
+.menu{
+    position: fixed;
+    background-color:rgb(35,71,91);
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+}
+.menu.is-active{
+  left: -100vw;
+}
+.menu li{
+  list-style: none;
+  color: white;
+  font-size:20px;
+}
+
+.menu li button{
+  margin-bottom: 20px;
+  width: 80px;
+  border: 3px solid white;
+  border-radius:25%;
+  background: #94d2e9;
+  color: white;
+  size: 20px;
+}
+  .container{
+    display: flex;
+  }
+
+  .gameboard {
+    height: 100vh;
+    width: 100vh;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    max-height: 60vh;
+    max-width: 60vh;
+    margin-top: 120px;
+  }
+
+  .color {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+  }
+
+  .left {
+    float: left;
+  }
+
+  .right {
+    float: left;
+  }
+
+  .celeste {
+    background: #22a6b3;
+  }
+
+  .celeste.light {
+    background: #7ed6df;
+  }
+
+  .violeta {
+    background: #be2edd;
+  }
+
+  .violeta.light {
+    background: #e056fd;
+  }
+
+  .naranja {
+    background: #f0932b;
+  }
+
+  .naranja.light {
+    background: #ffbe76;
+  }
+
+  .verde {
+    background: #6ab04c;
+  }
+
+  .verde.light {
+    background: #badc58;
+  }
+
+  .btn-start {
+    width: 400px;
+    height: 100px;
+    background: #ecf0f1;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    position: fixed;
+    top: calc(50% - 50px);
+    left: calc(50% - 200px);
+  }
+
+  .hide {
+    display: none;
+  }
+  .footer{
+    color: white;
+    background: #1b2127;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 25%;
+        
+  }
+
+  *{
+    font-family: 'Arial';
+  }
+
+  @media screen and (max-width:768px){
+    .gameboard{
+      width: 20em;
+      height: 20em;
+    }
+  }
